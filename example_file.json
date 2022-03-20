@@ -1,0 +1,2 @@
+{"time" : "2022-02-01 07:23:26.026163", "model" : "Oil-SonicStd", "id" : 00000, "flags" : 80, "alarm" : 1, "binding_countdown" : 0, "depth_cm" : 40, "mod" : "FSK", "freq1" : 433.955, "freq2" : 433.881, "rssi" : -9.468, "snr" : 11.033, "noise" : -20.501}
+{"time" : "2022-02-01 08:29:31.703362", "model" : "Oil-SonicStd", "id" : 00000, "flags" : 80, "alarm" : 1, "binding_countdown" : 0, "depth_cm" : 40, "mod" : "FSK", "freq1" : 433.957, "freq2" : 433.884, "rssi" : -9.031, "snr" : 10.017, "noise" : -19.048}
