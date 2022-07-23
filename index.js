@@ -15,6 +15,7 @@ function ApolloLevelAccessory(log, config) {
   this.name = config["name"];
   this.filePath = config["file_path"];
   var tankHeight = config["tank_height"];
+  var initialDepth = config["initial_depth"];
 
   var service = new Service.HumiditySensor(this.name);
 
@@ -35,7 +36,7 @@ function ApolloLevelAccessory(log, config) {
       }
       
       if (lastReading) {
-        var tankPercent = ((tankHeight - lastReading.depth_cm) / tankHeight) * 100.0;
+        var tankPercent = ((tankHeight + initialDepth - lastReading.depth_cm) / tankHeight) * 100.0;
         changeAction(tankPercent);
       } else {
         changeAction(null);

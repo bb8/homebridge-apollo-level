@@ -52,7 +52,7 @@ After=syslog.target network.target
 User=root
 Group=root
 Type=idle
-ExecStart=/usr/local/bin/rtl_433 -M hires -M level -Y autolevel -Y squelch -F kv -F json:/home/pi/rtl-433.json
+ExecStart=/usr/local/bin/rtl_433 -M hires -M level -F kv -F json:/home/pi/rtl-433.json
 WorkingDirectory=/home/pi
 TimeoutStopSec=20
 Restart=on-failure
@@ -83,12 +83,15 @@ Thank you to [@apalrd](https://www.apalrd.net/posts/2021/rtl433/) for the build 
   "name": "Oil Tank",
   "description": "Apollo Ultrasonic oil level monitor",
   "file_path": "/home/pi/rtl-433.json",
-  "tank_height": 120
+  "tank_height": 120,
+  "initial_depth": 13,
 }
 ```
 
 The tank height is the internal height of the oil tank in cm, and can be determined by reading the switches on the
 back of your receiver and cross-referencing the switch positions with those listed in the [Apollo Ultrasonic guide](https://dunravensystems.com/wp-content/uploads/2018/09/apollo-standard-oil-level-monitor-instructions-2015.pdf).
+
+The initial depth is the first `depth` reading of the sensor (in cm) when the oil tank has been filled to 100%.
 
 ## Install plugin
 On your Homebridge computer, with the attached SDR receiver:
