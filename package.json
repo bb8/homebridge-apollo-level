@@ -1,6 +1,6 @@
 {
   "name": "homebridge-apollo-level",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simulate an Apollo Ultrasonic Oil tank sensor from file",
   "main": "index.js",
   "scripts": {
