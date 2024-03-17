@@ -32,11 +32,11 @@ function ApolloLevelAccessory(log, config) {
       if (!err && data) {
         var lines = data.split(os.EOL);
         var lastLine = lines[lines.length - 1].length ? lines[lines.length - 1] : lines[lines.length - 2];
-        var lastReading = JSON.parse(lastLine);
+        var lastReading = parseInt(lastLine);
       }
 
       if (lastReading != null && lastReading !== "") {
-        var tankPercent = ((tankHeight + initialDepth - lastReading.depth_cm) / tankHeight) * 100.0;
+        var tankPercent = (tankHeight - lastReading) / tankHeight * 100.0;
         changeAction(tankPercent);
       } else {
         changeAction(null);
