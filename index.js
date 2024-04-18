@@ -36,7 +36,7 @@ function ApolloLevelAccessory(log, config) {
       }
 
       if (lastReading != null && lastReading !== "") {
-        var tankPercent = (tankHeight - lastReading) / tankHeight * 100.0;
+        var tankPercent = (tankHeight - initialDepth - lastReading) / (tankHeight - initialDepth) * 100.0;
         changeAction(tankPercent);
       } else {
         changeAction(null);
